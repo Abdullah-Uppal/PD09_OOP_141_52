@@ -20,7 +20,7 @@ public class Task1 {
     }
 
     public static int wordCounter(String s) {
-        System.err.println("Hello");
+        System.out.println("Hello");
         return 0;
     }
 }
