@@ -5,22 +5,25 @@
  */
 package pd09_oop_141_52;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Hp
  */
 public class Task1 {
-
+    private static Scanner input = new Scanner(System.in);
     public static void main(String []args) {
-        String s = "Hello! This is UET - University of Engineering & Technology - Lahore.";
-        
+        String s;
+        System.out.println("Enter the string: ");
+        s = input.nextLine();
         System.out.println("No of Words: "+wordCounter(s));
         System.out.println("No of Vowels:  "+vowelcounter(s));
         System.out.println("Number of punctuations: " + puncCount(s));
         
-        String sub = "UET";
-        
-        if (findSubString(s, sub)) {
+        String sub = "the";
+        String sub1 = "The";
+        if (findSubString(s, sub) || findSubString(s, sub1)) {
             System.out.println("\""+sub + "\" " + "is a part of the string.");
         } 
         else {
