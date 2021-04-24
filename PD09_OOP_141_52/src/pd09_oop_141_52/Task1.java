@@ -10,12 +10,18 @@ package pd09_oop_141_52;
  * @author Hp
  */
 public class Task1 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String []args) {
+        String s = "My name  is    Muhammad Abdullah and  I live in Lahore";
+        System.out.println(wordCounter(s));
     }
-    
+    public static int wordCounter(String s) {
+        int count = 1;
+        char previous = s.charAt(0);
+        for (int i = 0; i<s.length(); i++) {
+            if (s.charAt(i) == ' ' && previous != ' ') 
+                count++;
+            previous = s.charAt(i);
+        }
+        return count;
+    }
 }
