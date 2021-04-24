@@ -12,12 +12,12 @@ package pd09_oop_141_52;
 public class Task1 {
 
     public static void main(String []args) {
-        String s = "My name  is    Muhammad Abdullah and  I live in Lahore";
-        System.out.println(wordCounter(s));
-        System.out.println(vowelcounter(s));
+        String s = "Hello . this is uet Lahore";
+        System.out.println("No of Words= "+wordCounter(s));
+        System.out.println("No of Vowels= "+vowelcounter(s));
     }
     public static int wordCounter(String s) {
-        int count = 1;
+        int count = 0;
         char previous = s.charAt(0);
         for (int i = 0; i<s.length(); i++) {
             if (s.charAt(i) == ' ' && previous != ' ') 
