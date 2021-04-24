@@ -16,6 +16,11 @@ public class Task1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("pd09_oop_141_52.Task1.main()");
     }
-    
+
+    public static int wordCounter(String s) {
+        System.err.println("Hello");
+        return 0;
+    }
 }
