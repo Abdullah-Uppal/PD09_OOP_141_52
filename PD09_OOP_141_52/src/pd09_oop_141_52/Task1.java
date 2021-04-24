@@ -12,31 +12,15 @@ package pd09_oop_141_52;
 public class Task1 {
 
     public static void main(String []args) {
-        String s = "Hello! This is UET - University of Engineering & Technology - Lahore.";
-        
-        System.out.println("No of Words: "+wordCounter(s));
-        System.out.println("No of Vowels:  "+vowelcounter(s));
-        System.out.println("Number of punctuations: " + puncCount(s));
-        
-        String sub = "UET";
-        
-        if (findSubString(s, sub)) {
-            System.out.println("\""+sub + "\" " + "is a part of the string.");
-        } 
-        else {
-            System.out.println("\""+sub + "\" " + "is not a part of the string.");
-        }
+        String s = "Hello. this is uet Lahore";
+        System.out.println("No of Words= "+wordCounter(s));
+        System.out.println("No of Vowels= "+vowelcounter(s));
     }
     public static int wordCounter(String s) {
-        int count = 1;
+        int count = 0;
         char previous = s.charAt(0);
         for (int i = 0; i<s.length(); i++) {
-            
             if (s.charAt(i) == ' ' && previous != ' ') 
-                count++;
-            else if (s.charAt(i) == '\n' && previous != '\n') 
-                count++;
-            else if (s.charAt(i) == '\t' && previous != '\t') 
                 count++;
             previous = s.charAt(i);
         }
@@ -94,16 +78,6 @@ public class Task1 {
      * @return 
      */
     public static int puncCount(String s) {
-        int count = 0;
-        for (int i = 0; i<s.length(); i++) {
-            char c = s.charAt(i);
-            if (c == '.' || c == '?' || c == '"' || c == '"' || c == '\'' ||
-                c == ',' || c == '-' || c == '_' || c == '!' || c == ':' ||
-                c == ';' || c == '(' || c == ')' || c == '[' || c == ']' || 
-                c == '\\') {
-                count++;
-            }
-        }
-        return count;
+        return 1;
     }
 }
