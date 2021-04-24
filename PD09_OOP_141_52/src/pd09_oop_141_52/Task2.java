@@ -17,7 +17,6 @@ public class Task2 {
      * @param args the command line arguments
      */
     private static Scanner input = new Scanner(System.in);
-
     public static void main(String[] args) {
         // TODO code application logic here
         String s;

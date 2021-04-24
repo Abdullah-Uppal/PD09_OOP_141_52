@@ -75,7 +75,7 @@ public class Task1 {
         for (int i = 0; i<s.length(); i++) {
             if (s.charAt(i) == firstOfSub) {
                 int temp = i;
-                for (int f = 0; f<subLen; f++, temp++) {
+                for (int f = 0; f<subLen && temp<s.length(); f++, temp++) {
                     if (sub.charAt(f) != s.charAt(temp)) {
                         isIt = false;
                         break;
