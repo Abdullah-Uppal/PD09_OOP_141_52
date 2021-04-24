@@ -17,13 +17,13 @@ public class Task3 {
 
     public static void main(String[] args) {
         String s, i, k;
-        System.out.println("Enter String with unlimited spaces: ");
-        s = input.nextLine();
-        System.out.println("Corrected String is: " + ridMultipleBlank(s));
-
-        System.out.println("Enter String with integers: ");
-        i = input.nextLine();
-        System.out.println("Corrected String is: " + removeInteger(i));
+//        System.out.println("Enter String with unlimited spaces: ");
+//        s = input.nextLine();
+//        System.out.println("Corrected String is: " + ridMultipleBlank(s));
+//
+//        System.out.println("Enter String with integers: ");
+//        i = input.nextLine();
+//        System.out.println("Corrected String is: " + removeInteger(i));
 
         System.out.println("Enter String with unlimited spaces: ");
         k = input.nextLine();
@@ -61,14 +61,10 @@ public class Task3 {
     }
 
     public static String stringEncryption(String s) {
-        char newcode;
-        int code;
+        
         String encrypt = null;
         for (int i = 0; i < s.length(); i++) {
-            code = s.charAt(i);
-            code = code + 5 * 2;
-            newcode = (char) code;
-            encrypt = encrypt + newcode;
+            encrypt=encrypt+((char)(s.charAt(i)+ (7+i)));
         }
         return encrypt;
     }
