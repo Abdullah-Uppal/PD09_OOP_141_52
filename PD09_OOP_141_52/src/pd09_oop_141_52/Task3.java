@@ -5,42 +5,71 @@
  */
 package pd09_oop_141_52;
 
+import java.util.Scanner;
+
 /**
  *
  * @author abdullah
  */
 public class Task3 {
+
+    private static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        System.out.println(ridMultipleBlank("  Hasnain       Bhatti     ."));
-        System.out.println(removeInteger("He is78 a go23od Prog97ram08mer!"));
+        String s, i, k;
+        System.out.println("Enter String with unlimited spaces: ");
+        s = input.nextLine();
+        System.out.println("Corrected String is: " + ridMultipleBlank(s));
+
+        System.out.println("Enter String with integers: ");
+        i = input.nextLine();
+        System.out.println("Corrected String is: " + removeInteger(i));
+
+        System.out.println("Enter String with unlimited spaces: ");
+        k = input.nextLine();
+        System.out.println("Corrected String is: " + stringEncryption(k));
     }
+
     public static String ridMultipleBlank(String s) {
         String string = new String();
         char c;
         int len = s.length();
         boolean wordAdded = false;
-        for (int i = 0; i<len; i++) {
+        for (int i = 0; i < len; i++) {
             c = s.charAt(i);
             if (c != ' ') {
                 string += c;
                 wordAdded = true;
-            }
-            else if (wordAdded && i != (len-1)){
+            } else if (wordAdded && i != (len - 1)) {
                 string += ' ';
                 wordAdded = false;
             }
         }
         return string;
     }
+
     public static String removeInteger(String s) {
         String string = new String();
         char c;
-        for (int i = 0; i<s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             c = s.charAt(i);
             if (c < '0' || c > '9') {
                 string += c;
             }
         }
         return string;
+    }
+
+    public static String stringEncryption(String s) {
+        char newcode;
+        int code;
+        String encrypt = null;
+        for (int i = 0; i < s.length(); i++) {
+            code = s.charAt(i);
+            code = code + 5 * 2;
+            newcode = (char) code;
+            encrypt = encrypt + newcode;
+        }
+        return encrypt;
     }
 }

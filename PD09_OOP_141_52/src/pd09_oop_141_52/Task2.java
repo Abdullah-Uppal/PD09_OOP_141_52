@@ -17,6 +17,7 @@ public class Task2 {
      * @param args the command line arguments
      */
     private static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         // TODO code application logic here
         String s;
@@ -26,24 +27,21 @@ public class Task2 {
     }
 
     public static String displayVertical(String s) {
-        int count = 0;
         String ver = null;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z' || s.charAt(i) >= 'A'
                     && s.charAt(i) <= 'Z' || s.charAt(i) >= '0' && s.charAt(i) <= '9'
-                    || s.charAt(i) == '.' || s.charAt(i) == '?' || s.charAt(i) == '"' 
+                    || s.charAt(i) == '.' || s.charAt(i) == '?' || s.charAt(i) == '"'
                     || s.charAt(i) == '"' || s.charAt(i) == '\''
-                    || s.charAt(i) == ',' || s.charAt(i) == '-' || s.charAt(i) == '_' 
+                    || s.charAt(i) == ',' || s.charAt(i) == '-' || s.charAt(i) == '_'
                     || s.charAt(i) == '!' || s.charAt(i) == ':'
-                    || s.charAt(i) == ';' || s.charAt(i) == '(' || s.charAt(i) == ')' 
+                    || s.charAt(i) == ';' || s.charAt(i) == '(' || s.charAt(i) == ')'
                     || s.charAt(i) == '[' || s.charAt(i) == ']'
-                    || s.charAt(i) == '\\') {
+                    || s.charAt(i) == '\\') 
+            {
                 System.out.println(s.charAt(i));
                 ver = s;
-                count++;
-
             }
-
         }
         return ver;
     }
