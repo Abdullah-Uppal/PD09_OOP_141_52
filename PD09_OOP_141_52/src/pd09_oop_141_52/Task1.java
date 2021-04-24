@@ -12,7 +12,7 @@ package pd09_oop_141_52;
 public class Task1 {
 
     public static void main(String []args) {
-        String s = "Hello . this is uet Lahore";
+        String s = "Hello. this is uet Lahore";
         System.out.println("No of Words= "+wordCounter(s));
         System.out.println("No of Vowels= "+vowelcounter(s));
     }
@@ -42,5 +42,42 @@ public class Task1 {
         
         return count;
         
+
+    /**
+     * 
+     * @param s
+     * @param sub
+     * @return 
+     */
+    public static boolean findSubString(String s, String sub) {
+        int subLen = sub.length();
+        char firstOfSub = sub.charAt(0);
+        boolean isIt = true;
+        for (int i = 0; i<s.length(); i++) {
+            if (s.charAt(i) == firstOfSub) {
+                int temp = i;
+                for (int f = 0; f<subLen; f++, temp++) {
+                    if (sub.charAt(f) != s.charAt(temp)) {
+                        isIt = false;
+                        break;
+                    }
+                    else {
+                        isIt = true;
+                    }
+                }
+                if (isIt) {
+                    break;
+                }
+            }
+        }
+        return isIt;
+    }
+    /**
+     * 
+     * @param s
+     * @return 
+     */
+    public static int puncCount(String s) {
+        return 1;
     }
 }
