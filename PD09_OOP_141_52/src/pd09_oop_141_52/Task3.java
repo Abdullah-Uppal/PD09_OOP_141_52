@@ -63,7 +63,7 @@ public class Task3 {
     public static String stringEncryption(String s) {
         char newcode;
         int code;
-        String encrypt = null;
+        String encrypt = new String();
         for (int i = 0; i < s.length(); i++) {
             code = s.charAt(i);
             code = code + 5 * 2;
