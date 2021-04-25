@@ -20,10 +20,6 @@ public class Task4 {
         String cnic=input.nextLine();
         String c=CheckGender(cnic);
         System.out.println(c);
-        System.out.println(sort(cnic));
-        System.out.println(reverseSentence("Abdullah Asif is my name"));
-        System.out.println(center("Abdullah", 20) + 8);
-        System.out.println(insert("Muhammad Asif", "Abdullah ", 9));
     }
     public static String CheckGender(String cnic){
         String male="Male";
@@ -31,8 +27,7 @@ public class Task4 {
         String gender=null;
         if(cnic.length()==13)
         {
-            if(cnic.charAt(12)=='1' ||cnic.charAt(12)=='3'||cnic.charAt(12)=='5'
-                    ||cnic.charAt(12)=='7'||cnic.charAt(12)=='9')
+            if((cnic.charAt(12)-48) % 2 == 1)
             {
                 gender=male;
             }
@@ -42,28 +37,7 @@ public class Task4 {
         }
         return gender;
     }
-    public static String sort(String s) {
-        char[] arr = s.toCharArray();
-        int len = arr.length;
-        char temp;
-        for (int i = 0; i<len; i++) {
-            for (int f = i; f<len; f++) {
-                if (arr[i] > arr[f]) {
-                    temp = arr[i];
-                    arr[i] = arr[f];
-                    arr[f] = temp;
-                }
-            }
-        }
-        return new String(arr);
-    }
-    public static String reverse(String s) {
-        String string = new String();
-        for (int i = (s.length()-1); i>=0; i--) {
-            string += s.charAt(i);
-        }
-        return string;
-    }
+    
     public static String reverseSentence(String s) {
         String string = "";
         String word = "";
@@ -81,37 +55,77 @@ public class Task4 {
         string = word + ' ' + string;
         return string;
     }
-    public static String center(String s, int fieldWidth) {
-        int len = s.length();
+    
+}
+
+class MyString {
+    private String string;
+    
+    MyString(String string) {
+        this.string = string;
+    }
+    
+    MyString() {
+        this.string = new String();
+    }
+    public String reversed() {
+        String s = new String();
+        for (int i = (this.string.length()-1); i>=0; i--) {
+            s += this.string.charAt(i);
+        }
+        return s;
+    }
+    public String sorted(String s) {
+        char[] arr = s.toCharArray();
+        int len = arr.length;
+        char temp;
+        for (int i = 0; i<len; i++) {
+            for (int f = i; f<len; f++) {
+                if (arr[i] > arr[f]) {
+                    temp = arr[i];
+                    arr[i] = arr[f];
+                    arr[f] = temp;
+                }
+            }
+        }
+        return new String(arr);
+    }
+    
+    public String center(int fieldWidth) {
+        int len = this.string.length();
         int spaces = fieldWidth - len;
         if (spaces<=0) {
-            return s;
+            return this.string;
         }
-        String string = "";
+        String s = "";
         for (int i = 0; i<spaces/2; i++) {
-            string += ' ';
+            s += ' ';
         }
-        string += s;
+        s += this.string;
         for (int i = 0; i<spaces/2; i++) {
-            string += ' ';
+            s += ' ';
         }
-        return string;
+        return s;
     }
     
-    public static String insert(String s, String toInsert, int index) {
-        int len = s.length();
-        String string = "";
+    public void insert(String toInsert, int index) {
+        int len = this.string.length();
+        String s = "";
         if (index>=len) {
-            return s;
+            this.string += toInsert;
+            return;
         }
         for (int i = 0; i<index; i++) {
-            string += s.charAt(i);
+            s += this.string.charAt(i);
         }
-        string += toInsert;
+        s += toInsert;
         for (int i = index; i<len; i++) {
-            string += s.charAt(i);
+            s += this.string.charAt(i);
         }
-        return string;
+        this.string = s;
     }
-    
+    @Override
+    public String toString() {
+        return this.string;
+    }
 }
