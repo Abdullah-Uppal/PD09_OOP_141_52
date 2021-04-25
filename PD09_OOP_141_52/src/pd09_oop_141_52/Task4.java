@@ -29,7 +29,11 @@ public class Task4 {
         String c1 = CheckNumber(str1);
         System.out.println(c1);
     }
-
+/**
+ * this function checks whether the string contains number or not
+ * @param c
+ * @return result
+ */
     public static String CheckNumber(String c) {
         String yes = "Contains A Number";
         String no = "Doesn't have A Number";
@@ -43,6 +47,11 @@ public class Task4 {
         }
         return result;
     }
+ /**
+ * this function checks whether the string contains special character or not
+ * @param c
+ * @return result
+ */
 
     public static String CheckSpecial(String c) {
         String yes = "Contains Special Character";
