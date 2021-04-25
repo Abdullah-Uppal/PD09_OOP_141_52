@@ -17,15 +17,15 @@ public class Task3 {
 
     public static void main(String[] args) {
         String s, i, k;
-//        System.out.println("Enter String with unlimited spaces: ");
-//        s = input.nextLine();
-//        System.out.println("Corrected String is: " + ridMultipleBlank(s));
-//
-//        System.out.println("Enter String with integers: ");
-//        i = input.nextLine();
-//        System.out.println("Corrected String is: " + removeInteger(i));
-
         System.out.println("Enter String with unlimited spaces: ");
+        s = input.nextLine();
+        System.out.println("Corrected String is: " + ridMultipleBlank(s));
+
+        System.out.println("Enter String with integers: ");
+        i = input.nextLine();
+        System.out.println("Corrected String is: " + removeInteger(i));
+
+        System.out.println("Enter String to get encrypted code: ");
         k = input.nextLine();
         System.out.println("Corrected String is: " + stringEncryption(k));
     }
