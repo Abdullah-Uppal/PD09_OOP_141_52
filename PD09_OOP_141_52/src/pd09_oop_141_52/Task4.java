@@ -20,6 +20,10 @@ public class Task4 {
         String cnic=input.nextLine();
         String c=CheckGender(cnic);
         System.out.println(c);
+        System.out.println(sort(cnic));
+        System.out.println(reverseSentence("Abdullah Asif is my name"));
+        System.out.println(center("Abdullah", 20) + 8);
+        System.out.println(insert("Muhammad Asif", "Abdullah ", 9));
     }
     public static String CheckGender(String cnic){
         String male="Male";
@@ -37,6 +41,77 @@ public class Task4 {
             }
         }
         return gender;
+    }
+    public static String sort(String s) {
+        char[] arr = s.toCharArray();
+        int len = arr.length;
+        char temp;
+        for (int i = 0; i<len; i++) {
+            for (int f = i; f<len; f++) {
+                if (arr[i] > arr[f]) {
+                    temp = arr[i];
+                    arr[i] = arr[f];
+                    arr[f] = temp;
+                }
+            }
+        }
+        return new String(arr);
+    }
+    public static String reverse(String s) {
+        String string = new String();
+        for (int i = (s.length()-1); i>=0; i--) {
+            string += s.charAt(i);
+        }
+        return string;
+    }
+    public static String reverseSentence(String s) {
+        String string = "";
+        String word = "";
+        char c;
+        for (int i = 0; i<s.length(); i++) {
+            c = s.charAt(i);
+            if (c != ' ') {
+                word = word + c;
+            }
+            else {
+                string = word + c + string;
+                word = "";
+            }
+        }
+        string = word + ' ' + string;
+        return string;
+    }
+    public static String center(String s, int fieldWidth) {
+        int len = s.length();
+        int spaces = fieldWidth - len;
+        if (spaces<=0) {
+            return s;
+        }
+        String string = "";
+        for (int i = 0; i<spaces/2; i++) {
+            string += ' ';
+        }
+        string += s;
+        for (int i = 0; i<spaces/2; i++) {
+            string += ' ';
+        }
+        return string;
+    }
+    
+    public static String insert(String s, String toInsert, int index) {
+        int len = s.length();
+        String string = "";
+        if (index>=len) {
+            return s;
+        }
+        for (int i = 0; i<index; i++) {
+            string += s.charAt(i);
+        }
+        string += toInsert;
+        for (int i = index; i<len; i++) {
+            string += s.charAt(i);
+        }
+        return string;
     }
     
 }
