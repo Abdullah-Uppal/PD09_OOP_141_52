@@ -40,9 +40,10 @@ public class Task2 {
                     || s.charAt(i) == '\\') 
             {
                 System.out.println(s.charAt(i));
-                ver = s;
+                //ver = s;
             }
         }
+        ver = s;
         return ver;
     }
 }
